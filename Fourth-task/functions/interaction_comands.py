@@ -21,13 +21,11 @@ def parce_input(user_input:str) -> tuple:
 
 @input_error
 def add_contact(args: list, contacts: dict) -> str:
-    
     name, phone = args
     if not name in contacts:
         contacts[name] = phone
         return f'Contact {name} added!'
-    else:
-        raise KeyError()
+    raise KeyError()
 
 
 def show_all(contacts: dict) -> None:
@@ -37,27 +35,18 @@ def show_all(contacts: dict) -> None:
 
 @input_error
 def show_phone(args_list: list, contacts: dict) -> str:
-    name = args_list[0] if len(args_list) > 0 else ''
+    name = args_list[0]
     if name in contacts:
         return contacts.get(name)
-    if name == "":
-        raise ValueError()
-    else:
-        raise IndexError()
+    raise IndexError
 
 
 @input_error
 def change_contact(args_list: list, contacts: dict) -> str:
-
-    if len(args_list) < 2:
-        raise ValueError()
-
     name, phone = args_list[0], args_list[1]
-
     if name in contacts:
         contacts[name] = phone
         return f'Contact updated: {name} {phone}'
-    
     raise IndexError()
         
 
