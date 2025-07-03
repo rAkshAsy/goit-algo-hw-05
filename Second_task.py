@@ -5,7 +5,7 @@ from decimal import Decimal
 def generator_numbers(text: str) -> Generator[str, None, None]:
 
     # Pattern for floating-point numbers with two decimal places
-    pattern = r'\d+\.\d{2}'
+    pattern = r' \d+\.\d* '
 
     # Find and yield all matched numbers one by one
     for number in re.findall(pattern, text):
@@ -25,7 +25,7 @@ texts = [
     "Компанія виплатила 230.50 як зарплату, а ще 15.00 — як бонус за відпустку.",
     "Надходження включають: 100.00, 200.00, 50.00 — разом утворюють повний дохід.",
     "У звіті зазначено лише одне джерело прибутку: 9999.99.",
-    "Цього разу прибутків не було. Все 0.00.",
+    "Цього разу прибутків не було. Все 10.00.",
     "Тимчасово доступні лише такі кошти: 13.37 і 42.00."
 ]
 
