@@ -26,7 +26,7 @@ def main():
                 print(ic.add_contact(argument_list, contact_dict))
 
             case 'all':
-                ic.show_all(contact_dict)
+                print(ic.show_all(contact_dict))
 
             case 'phone':
                 print(ic.show_phone(argument_list, contact_dict))

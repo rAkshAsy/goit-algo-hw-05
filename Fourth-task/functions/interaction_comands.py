@@ -30,7 +30,7 @@ def add_contact(args: list, contacts: dict) -> str:
 
 def show_all(contacts: dict) -> None:
     for name, phone in contacts.items():
-        print(f'{name}: {phone}')
+        return f'{name}: {phone}'
 
 
 @input_error
