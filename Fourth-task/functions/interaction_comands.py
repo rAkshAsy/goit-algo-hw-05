@@ -28,9 +28,11 @@ def add_contact(args: list, contacts: dict) -> str:
     raise KeyError()
 
 
-def show_all(contacts: dict) -> None:
+def show_all(contacts: dict) -> str:
+    result = []
     for name, phone in contacts.items():
-        return f'{name}: {phone}'
+        result.append(f'{name}: {phone}')
+    return '\n'.join(result)
 
 
 @input_error
